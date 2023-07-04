@@ -3,7 +3,7 @@ function Header() {
 		<nav className='green darken-1'>
 			<div className='nav-wrapper'>
 				<a
-					href='#'
+					href='/'
 					className='brand-logo'
 				>
 					React Shop
@@ -13,7 +13,13 @@ function Header() {
 					className='right hide-on-med-and-down'
 				>
 					<li>
-						<a href='#'>Sass</a>
+						<a
+							href='https://github.com/AlexManBow/shop-first'
+							target='_blank'
+							rel='noreferrer'
+						>
+							Sass
+						</a>
 					</li>
 				</ul>
 			</div>
