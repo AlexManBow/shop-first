@@ -61,6 +61,17 @@ nav {
     animation: show 500ms ease-in-out;
 }
 
+@keyframes show {
+    from {
+        top: 70%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
 .basket-close {
     cursor: pointer;
     position: absolute;
@@ -79,14 +90,20 @@ nav {
     color: #26a69a;
 }
 
-@keyframes show {
+
+
+#toast-container {
+    top: 3rem !important;
+    animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-in {
     from {
-        top: 70%;
         opacity: 0;
+        transform: translateY(2rem);
     }
     to {
-        top: 50%;
         opacity: 1;
-
+        transform: translateY(0rem);
     }
 }

@@ -33,6 +33,9 @@ function BasketList(props) {
 			<li className='collection-item active'>
 				Общая стоимость: {totalPrice} руб.
 			</li>
+			<li className='collection-item'>
+				<button className='btn-small'>Оформить</button>
+			</li>
 			<li
 				className='material-icons basket-close'
 				onClick={handleBasketShow}
