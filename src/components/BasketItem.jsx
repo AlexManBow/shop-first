@@ -17,14 +17,14 @@ function BasketItem(props) {
 			>
 				remove
 			</i>{' '}
-			x{quantity}{' '}
+			{quantity}{' '}
 			<i
 				className='material-icons basket-quantity'
 				onClick={() => incQuantity(id)}
 			>
 				add
 			</i>{' '}
-			= {price}
+			x {price} = {price * quantity} руб.
 			<span className='secondary-content'>
 				<i
 					className='material-icons basket-delete'

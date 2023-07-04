@@ -57,6 +57,8 @@ nav {
     background-color: #fff;
     width: 50rem;
     max-width: 95%;
+
+    animation: show 500ms ease-in-out;
 }
 
 .basket-close {
@@ -75,5 +77,16 @@ nav {
     cursor: pointer;
     vertical-align: middle;
     color: #26a69a;
+}
 
+@keyframes show {
+    from {
+        top: 70%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+
+    }
 }
