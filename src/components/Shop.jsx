@@ -4,23 +4,25 @@ import { API_KEY, API_URL } from '../config'
 import { Preloader } from './Preloader'
 import { GoodsList } from './GoodsList'
 import { Cart } from './Cart'
+import { BasketList } from './BasketList'
 
 function Shop() {
 	const [goods, setGoods] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [order, setOrder] = useState([])
+	const [isBasketShow, setBasketShow] = useState(false)
 
 	const addToBasket = (item) => {
-		console.log(order)
 		const itemIndex = order.findIndex((orderItem) => orderItem.id === item.id)
+		let newOrder = []
 		if (itemIndex < 0) {
 			const newItem = {
 				...item,
 				quantity: 1
 			}
-			setOrder([...order, newItem])
+			newOrder = [...order, newItem]
 		} else {
-			const newOrder = order.map((orderItem, index) => {
+			newOrder = order.map((orderItem, index) => {
 				if (index === itemIndex) {
 					return {
 						...orderItem,
@@ -30,8 +32,12 @@ function Shop() {
 					return orderItem
 				}
 			})
-			setOrder(newOrder)
 		}
+		setOrder(newOrder)
+	}
+
+	const handleBasketShow = () => {
+		setBasketShow(!isBasketShow)
 	}
 
 	useEffect(function getGoods() {
@@ -49,13 +55,22 @@ function Shop() {
 
 	return (
 		<main className='container content'>
-			<Cart quantity={order.length} />
+			<Cart
+				quantity={order.length}
+				handleBasketShow={handleBasketShow}
+			/>
 			{loading ? (
 				<Preloader />
 			) : (
 				<GoodsList
 					goods={goods}
 					addToBasket={addToBasket}
+				/>
+			)}
+			{isBasketShow && (
+				<BasketList
+					order={order}
+					handleBasketShow={handleBasketShow}
 				/>
 			)}
 		</main>
