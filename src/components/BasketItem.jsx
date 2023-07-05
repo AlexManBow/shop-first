@@ -13,7 +13,6 @@ function BasketItem(props) {
 	} = props
 
 	const { example } = useContext(ShopContext)
-	console.log(example)
 
 	return (
 		<li className='collection-item'>
