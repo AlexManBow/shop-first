@@ -1,6 +1,6 @@
 {
   "name": "react-shop",
-  "home": "https://AlexManBow.github.io/shop-first",
+  "homepage": "https://AlexManBow.github.io/shop-first",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
