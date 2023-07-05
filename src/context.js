@@ -2,6 +2,7 @@ import { createContext, useReducer } from 'react'
 import { reducer } from './reducer'
 
 export const ShopContext = createContext()
+
 const initialState = {
 	goods: [],
 	loading: true,
@@ -29,6 +30,9 @@ export const ContextProvider = ({ children }) => {
 	}
 	value.handleBasketShow = () => {
 		dispatch({ type: 'TOGGLE_BASKET_SHOW' })
+	}
+	value.setGoods = (data) => {
+		dispatch({ type: 'SET_GOODS', payload: data })
 	}
 	return <ShopContext.Provider value={value}>{children}</ShopContext.Provider>
 }
